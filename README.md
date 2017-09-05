@@ -1,4 +1,4 @@
-VitalPBX Communicator ()
+VitalPBX Communicator
 =====
 
 VitalPBX Communicator is a free open-source audio/video and chat communicator based on Jitsi project that supports protocols such as SIP, XMPP/Jabber, IRC and many other useful features.
