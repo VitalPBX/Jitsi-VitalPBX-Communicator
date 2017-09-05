@@ -1,0 +1,20 @@
+classes/
+.DS_Store
+.idea
+*.iws
+jitsi.iml
+jitsi.ipr
+jitsi-local.iml
+lib/accounts.properties
+nbproject/private
+release/
+sc-bundles/
+sip-communicator.utest.bin
+*.swp
+target/
+test-reports/
+web-start/WebStartBuild.properties
+
+# Never actually store Google API client token. A template is already committed
+# and the token should always be generated on-the-fly.
+/src/net/java/sip/communicator/impl/googlecontacts/GoogleAPIClientToken.java
