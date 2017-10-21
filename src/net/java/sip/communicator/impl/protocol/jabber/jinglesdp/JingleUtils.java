@@ -673,6 +673,7 @@ public class JingleUtils
      * in the <tt>content</tt>'s <tt>description</tt>, if any.
      * <tt>contentName</tt>
      */
+    @SuppressWarnings("deprecation")
     public static MediaType getMediaType(ContentPacketExtension content)
     {
         if (content == null)

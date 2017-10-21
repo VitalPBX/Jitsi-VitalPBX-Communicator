@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/felix.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="http://www.osgi.org/javadoc/r4v42/"/>
@@ -83,5 +82,6 @@
 	<classpathentry kind="lib" path="lib/installer-exclude/jackson-core-2.5.3.jar"/>
 	<classpathentry kind="lib" path="lib/installer-exclude/dnssecjava-1.1.jar" sourcepath="/dnssecjava"/>
 	<classpathentry kind="lib" path="lib/installer-exclude/gson-2.8.0.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_144"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

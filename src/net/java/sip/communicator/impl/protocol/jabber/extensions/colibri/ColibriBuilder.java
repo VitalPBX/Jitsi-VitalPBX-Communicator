@@ -233,6 +233,7 @@ public class ColibriBuilder
             ColibriConferenceIQ.Content contentRequest
                 = request.getOrCreateContent(contentName);
 
+            @SuppressWarnings("deprecation")
             ColibriConferenceIQ.ChannelCommon remoteChannelRequest
                 = mediaType != MediaType.DATA
                         ? new ColibriConferenceIQ.Channel()

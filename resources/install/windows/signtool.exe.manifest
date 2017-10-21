@@ -3,14 +3,14 @@
 
     <assemblyIdentity
         name=" "
-        version="0.0.0.0"
+        version="2.11.2.22"
     />
 
     <dependency>
         <dependentAssembly>
             <assemblyIdentity
                 name="Microsoft.Windows.Build.Signing.mssign32.dll"
-                version="0.0.0.0"
+                version="2.11.2.22"
             />
         </dependentAssembly>
     </dependency>
@@ -19,7 +19,7 @@
         <dependentAssembly>
             <assemblyIdentity
                 name="Microsoft.Windows.Build.Signing.wintrust.dll"
-                version="0.0.0.0"
+                version="2.11.2.22"
             />
         </dependentAssembly>
     </dependency>

@@ -47,7 +47,7 @@
         -->
         <property environment="env" />
 
-        <condition property="application.company.name" value="jitsi.org">
+        <condition property="application.company.name" value="vitalpbx.org">
             <not>
                 <isset property="application.company.name" />
             </not>
@@ -98,7 +98,7 @@
     <!-- Put here the release directory -->
     <property name="macosx.app.dir" value="${release}/macosx"/>
     <!-- Put here the resource directory -->
-    <property name="macosx.resrc.dir" value="${inst.resrc}/macosx"/>
+    <property name="macosx.resrc.dir" value="${inst.resrc}/macosx${inst.resrc}/macosx"/>
 
     <!-- The release directory for Debian packages -->
     <property name="debian.dir" value="${release}/debian"/>
@@ -268,16 +268,16 @@
         <replace file="${inst.resrc}/linux/felix.client.run.properties"
             token="reference:file:sc-bundles/swingnotification.jar \">
             <replacevalue><![CDATA[reference:file:sc-bundles/galagonotification.jar \
- reference:file:sc-bundles/swingnotification.jar \]]></replacevalue>
+ 			reference:file:sc-bundles/swingnotification.jar \]]></replacevalue>
         </replace>
 
         <!-- create izpack installer jar file -->
-        <izpack input="${linux.app.dir}/tmp/tmp-installer-linux.xml"
+    	<izpack input="${linux.app.dir}/tmp/tmp-installer-linux.xml"
                 output="${linux.app.dir}/tmp/${package.name}-${sip-communicator.version}-linux.jar"
                 installerType="standard"
                 basedir="${sc.basedir}"
                 izPackDir="${izpack.dir}/"/>
-
+    	
         <!-- Create self extract linux binary-->
         <tar tarfile="${linux.app.dir}/tmp/install.tar"
              basedir="${linux.app.dir}/tmp"/>
@@ -321,7 +321,7 @@
         <property name="windows.package.name.suffix" value="x86.exe"/>
         <property name="windows.msi.package.name.suffix" value="x86.msi"/>
         <property name="windows.arch" value="32"/>
-        <property name="mingw.home" value="C:/mingw/x86" />
+        <property name="mingw.home" value="D:/Desarrollos/VitalPBX/C/mingw/x86" />
         <antcall target="build-installation-wix-base" />
     </target>
 
@@ -336,7 +336,7 @@
         <property name="windows.package.name.suffix" value="x64.exe"/>
         <property name="windows.msi.package.name.suffix" value="x64.msi"/>
         <property name="windows.arch" value="64"/>
-        <property name="mingw.home" value="C:/mingw/x64" />
+        <property name="mingw.home" value="D:/Desarrollos/VitalPBX/C/mingw/x64" />
         <antcall target="build-installation-wix-base" />
     </target>
 
@@ -625,7 +625,7 @@
                 todir="${light.dir}"
                 overwrite="true" />
 
-        <property name="wix.home" value="C:\Program Files\WiX" />
+        <property name="wix.home" value="D:/Desarrollos/VitalPBX/C/wix311" />
 
         <!-- Execute heat.exe -->
         <exec
@@ -863,7 +863,7 @@
 
         <!-- create transform files for the supported setup locales -->
         <antcall target="build-installation-wix-locale">
-            <param name="locale.name" value="fr-fr"/>
+            <param name="locale.name" value="en-us"/>
             <param name="locale.codepage" value="1252"/>
         </antcall>
         <!--antcall target="build-installation-wix-locale">
@@ -888,7 +888,7 @@
                 failonerror="true">
             <arg value="${inst.resrc}\windows\WiSubStg.vbs" />
             <arg value="${windows.app.dir}\tmp\setup.msi" />
-            <arg value="${windows.app.dir}\tmp\fr-fr.mst" />
+            <arg value="${windows.app.dir}\tmp\en-us.mst" />
             <arg value="1036" />
         </exec>
         <!--exec
@@ -1182,8 +1182,9 @@
             description="Create an .app package for MACOSX">
 
       <taskdef name="jarbundler"
-               classname="net.sourceforge.jarbundler.JarBundler"/>
-
+               classname="net.sourceforge.jarbundler.JarBundler"
+    			classpath="D:\Desarrollos\VitalPBX\C\mac\jarbundler-2.3.1\jarbundler-2.3.1.jar"/>
+ 
       <mkdir dir="${macosx.app.dir}"/>
 
       <condition property="macosx.stubfile"

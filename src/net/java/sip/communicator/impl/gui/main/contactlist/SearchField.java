@@ -17,6 +17,7 @@
  */
 package net.java.sip.communicator.impl.gui.main.contactlist;
 
+import java.awt.Font;
 import java.awt.event.*;
 
 import javax.swing.*;
@@ -90,6 +91,7 @@ public class SearchField
      * @param isSMSButtonEnabled indicates if the sms button should be
      * enabled in this search field
      */
+   
     public SearchField( MainFrame frame,
                         ContactListSearchFilter searchFilter,
                         boolean isCallButtonEnabled,
@@ -97,10 +99,11 @@ public class SearchField
     {
         super(GuiActivator.getResources()
                 .getI18NString("service.gui.ENTER_NAME_OR_NUMBER"));
-
+        
         this.mainFrame = frame;
         this.searchFilter = searchFilter;
-
+        this.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+        
         if (getUI() instanceof ContactSearchFieldUI)
         {
             ((ContactSearchFieldUI) getUI()).setupListeners();
@@ -131,7 +134,7 @@ public class SearchField
                     SearchField.this.mainFrame.requestFocusInContactList();
             }
         });
-
+        
         loadSkin();
     }
 

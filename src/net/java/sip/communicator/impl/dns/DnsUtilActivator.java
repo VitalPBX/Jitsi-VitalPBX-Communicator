@@ -65,7 +65,7 @@ public class DnsUtilActivator
      * The address of the backup resolver we would use by default.
      */
     public static final String DEFAULT_BACKUP_RESOLVER
-        = "backup-resolver.jitsi.net";
+        = "8.8.8.8";
 
     /**
      * The name of the property that users may use to override the port

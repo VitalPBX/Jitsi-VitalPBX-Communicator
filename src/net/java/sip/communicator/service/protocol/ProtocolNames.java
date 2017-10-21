@@ -47,7 +47,7 @@ public interface ProtocolNames
      * The ICQ service protocol.
      */
     public static final String ICQ = "ICQ";
-
+    
     /**
      * The AIM service protocol.
      */

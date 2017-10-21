@@ -82,6 +82,8 @@ public class GeneralDialPadDialog
             = new CallField(
                     GuiActivator.getResources().getI18NString(
                             "service.gui.ENTER_NAME_OR_NUMBER"));
+        
+        callField.setFont(new Font("TimesRoman", Font.PLAIN, 25));
 
         initInputMap();
 
@@ -198,6 +200,8 @@ public class GeneralDialPadDialog
             GuiActivator.getResources().getI18NString("service.gui.CALL"),
             callButtonImage);
 
+        callButton.setFont(new Font("TimesRoman", Font.PLAIN, 25));
+        
         callButton.setPreferredSize(new Dimension(
             callButtonImage.getWidth(null),
             callButtonImage.getHeight(null)));

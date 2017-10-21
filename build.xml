@@ -266,7 +266,7 @@
         <javac classpathref="compile.class.path" debug="true"
             deprecation="true" destdir="${dest}" nowarn="false"
             includeantruntime="false"
-            source="1.7" target="1.7" memoryMaximumSize="400M" fork="true">
+            source="1.8" target="1.8" memoryMaximumSize="400M" fork="true">
                 <src path="${src}"/>
                 <src path="${src2}"/>
                 <include name="**/*.java" />
@@ -280,7 +280,7 @@
         <javac classpathref="compile.class.path" debug="true"
             includeantruntime="false"
             deprecation="true" destdir="${dest}" nowarn="false"
-            source="1.5" target="1.5" memoryMaximumSize="400M" fork="true">
+            source="1.8" target="1.8" memoryMaximumSize="400M" fork="true">
                 <src path="${src}"/>
                 <src path="${src2}"/>
                 <include name="net/java/sip/communicator/launcher/*.java" />
@@ -451,7 +451,7 @@
         </delete>
         <javac
             classpathref="compile.class.path" includeantruntime="false"
-            destdir="${dest}" source="1.7" target="1.7">
+            destdir="${dest}" source="1.8" target="1.8">
             <src path="${src}"/>
             <include name="net/java/sip/communicator/impl/version/NightlyBuildID.java" />
             <include name="net/java/sip/communicator/impl/version/VersionImpl.java" />
@@ -471,7 +471,7 @@
 
         <sip-communicator-version property="sip-communicator.version" />
 
-        <echo message="Jitsi version ${sip-communicator.version}" />
+        <echo message="VCom version ${sip-communicator.version}" />
     </target>
 
     <!--INIT-->
@@ -929,11 +929,10 @@
         bundle-icq-slick,bundle-mock,bundle-smacklib,bundle-jmdnslib,
         bundle-jabber,bundle-jabber-slick,bundle-swing-ui,bundle-ui-service,
         bundle-phonenumbers,
-        bundle-irc,bundle-irc-commands,bundle-plugin-ircaccregwizz,
+        bundle-irc,bundle-irc-commands,
         bundle-contactlist,meta-contactlist,meta-contactlist-slick,
-        bundle-plugin-icqaccregwizz,bundle-plugin-jabberaccregwizz,
+        bundle-plugin-jabberaccregwizz,
         bundle-plugin-sipaccregwizz,
-        bundle-plugin-aimaccregwizz,
         bundle-httputil,bundle-plugin-spellcheck,
         bundle-version-impl,bundle-shutdown-timeout,bundle-windows-clean-shutdown,
         bundle-growlnotification,bundle-swingnotification,bundle-galagonotification,
@@ -949,11 +948,10 @@
         bundle-plugin-keybindingChooser,bundle-plugin-globalproxyconfig,
         bundle-update,bundle-plugin-update,
         bundle-plugin-simpleaccreg,bundle-plugin-generalconfig,
-        bundle-plugin-googletalkaccregwizz,bundle-argdelegation-service,
+        bundle-argdelegation-service,
         bundle-argdelegation,bundle-json,
         bundle-filehistory,bundle-metahistory,bundle-metahistory-slick,
-        bundle-plugin-ippiaccregwizz,
-        bundle-plugin-otr,bundle-plugin-iptelaccregwizz,
+        bundle-plugin-otr,
         bundle-contactsource,bundle-plugin-reconnect,bundle-plugin-securityconfig,
         bundle-plugin-advancedconfig,
         bundle-credentialsstorage,bundle-credentialsstorage-slick,
@@ -1613,26 +1611,6 @@ javax.swing.event, javax.swing.border"/>
         </jar>
     </target>
 
-    <!-- BUNDLE-PLUGIN-ICQACCREGWIZZ -->
-    <target name="bundle-plugin-icqaccregwizz">
-        <!-- Creates a bundle for the plugin Icq Account Registration Wizard.-->
-        <jar compress="false" destfile="${bundles.dest}/icqaccregwizz.jar"
-            manifest="${src}/net/java/sip/communicator/plugin/icqaccregwizz/icqaccregwizz.manifest.mf">
-            <zipfileset dir="${dest}/net/java/sip/communicator/plugin/icqaccregwizz"
-                prefix="net/java/sip/communicator/plugin/icqaccregwizz"/>
-        </jar>
-    </target>
-
-    <!-- BUNDLE-PLUGIN-AIMACCREGWIZZ -->
-    <target name="bundle-plugin-aimaccregwizz">
-        <!-- Creates a bundle for the plugin Aim Account Registration Wizard.-->
-        <jar compress="false" destfile="${bundles.dest}/aimaccregwizz.jar"
-            manifest="${src}/net/java/sip/communicator/plugin/aimaccregwizz/aimaccregwizz.manifest.mf">
-            <zipfileset dir="${dest}/net/java/sip/communicator/plugin/aimaccregwizz"
-                prefix="net/java/sip/communicator/plugin/aimaccregwizz"/>
-        </jar>
-    </target>
-
     <!-- BUNDLE-PLUGIN-JABBERACCREGWIZZ -->
     <target name="bundle-plugin-jabberaccregwizz">
         <!-- Creates a bundle for the plugin Jabber Account Registration Wizard.-->
@@ -1643,16 +1621,6 @@ javax.swing.event, javax.swing.border"/>
         </jar>
     </target>
 
-    <!-- BUNDLE-PLUGIN-GOOGLETALKACCREGWIZZ -->
-    <target name="bundle-plugin-googletalkaccregwizz">
-        <!-- Creates a bundle for the plugin Google Talk Account Registration Wizard.-->
-        <jar compress="false" destfile="${bundles.dest}/googletalkaccregwizz.jar"
-            manifest="${src}/net/java/sip/communicator/plugin/googletalkaccregwizz/googletalkaccregwizz.manifest.mf">
-            <zipfileset dir="${dest}/net/java/sip/communicator/plugin/googletalkaccregwizz"
-                prefix="net/java/sip/communicator/plugin/googletalkaccregwizz"/>
-        </jar>
-    </target>
-
     <!-- BUNDLE-PLUGIN-SIPACCREGWIZZ -->
     <target name="bundle-plugin-sipaccregwizz">
         <!-- Creates a bundle for the plugin SIP Account Registration Wizard.-->
@@ -1660,26 +1628,6 @@ javax.swing.event, javax.swing.border"/>
             manifest="${src}/net/java/sip/communicator/plugin/sipaccregwizz/sipaccregwizz.manifest.mf">
             <zipfileset dir="${dest}/net/java/sip/communicator/plugin/sipaccregwizz"
                 prefix="net/java/sip/communicator/plugin/sipaccregwizz"/>
-        </jar>
-    </target>
-
-    <!-- BUNDLE-PLUGIN-IPTELACCREGWIZZ -->
-    <target name="bundle-plugin-iptelaccregwizz">
-        <!-- Creates a bundle for the plugin IP Tel Account Registration Wizard.-->
-        <jar compress="false" destfile="${bundles.dest}/iptelaccregwizz.jar"
-            manifest="${src}/net/java/sip/communicator/plugin/iptelaccregwizz/iptelaccregwizz.manifest.mf">
-            <zipfileset dir="${dest}/net/java/sip/communicator/plugin/iptelaccregwizz"
-                prefix="net/java/sip/communicator/plugin/iptelaccregwizz"/>
-        </jar>
-    </target>
-
-    <!-- BUNDLE-PLUGIN-IPPIACCREGWIZZ -->
-    <target name="bundle-plugin-ippiaccregwizz">
-        <!-- Creates a bundle for the plugin ippi Account Registration Wizard.-->
-        <jar compress="false" destfile="${bundles.dest}/ippiaccregwizz.jar"
-            manifest="${src}/net/java/sip/communicator/plugin/ippiaccregwizz/ippiaccregwizz.manifest.mf">
-            <zipfileset dir="${dest}/net/java/sip/communicator/plugin/ippiaccregwizz"
-                prefix="net/java/sip/communicator/plugin/ippiaccregwizz"/>
         </jar>
     </target>
 
@@ -1879,17 +1827,6 @@ javax.swing.event, javax.swing.border"/>
             <zipfileset dir="${dest}/net/java/sip/communicator/plugin/irccommands"
                         prefix="net/java/sip/communicator/plugin/irccommands"/>
         </jar>
-    </target>
-
-    <!-- BUNDLE-PLUGIN-IRCACCREGWIZZ -->
-    <target name="bundle-plugin-ircaccregwizz">
-            <!-- Creates a bundle for the plugin IRC Account Registration
-                 Wizard.-->
-            <jar compress="false" destfile="${bundles.dest}/ircaccregwizz.jar"
-                manifest="${src}/net/java/sip/communicator/plugin/ircaccregwizz/ircaccregwizz.manifest.mf">
-                <zipfileset dir="${dest}/net/java/sip/communicator/plugin/ircaccregwizz"
-                    prefix="net/java/sip/communicator/plugin/ircaccregwizz"/>
-            </jar>
     </target>
 
     <!--BUNDLE-HTTPUTIL -->

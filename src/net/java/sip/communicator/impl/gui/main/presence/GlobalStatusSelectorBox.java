@@ -677,7 +677,7 @@ public class GlobalStatusSelectorBox
 
                 g.drawImage(
                     arrowImage,
-                    textWidth + 2*IMAGE_INDENT + 2,
+                    textWidth + 2*IMAGE_INDENT + 17,
                     getX()
                         + (this.getHeight() - arrowImage.getHeight(null)) / 2
                         + 1,
@@ -704,7 +704,7 @@ public class GlobalStatusSelectorBox
                 : ComponentUtils.getStringWidth(this, text);
 
         this.setPreferredSize(new Dimension(
-            textWidth + 2*IMAGE_INDENT + arrowImage.getWidth(null) + 5, 20));
+            textWidth + 2*IMAGE_INDENT + arrowImage.getWidth(null) + 20, 20));
     }
 
     /**

@@ -24,8 +24,5 @@ package net.java.sip.communicator.impl.version;
  */
 public class NightlyBuildID
 {
-    /**
-     * The build ID.
-     */
-    public static final String BUILD_ID="0.build.by.SVN";
+    public static final String BUILD_ID="222";
 }

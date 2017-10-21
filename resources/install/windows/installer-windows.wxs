@@ -44,7 +44,7 @@
       IncludeMinimum="yes"
       Language="1033,1036"
       Maximum="@PRODUCTBUILDVERSION@"
-      Minimum="0.0.0.0"
+      Minimum="2.11.2.21"
       Property="UPGRADEFOUND" />
 </Upgrade>
 
